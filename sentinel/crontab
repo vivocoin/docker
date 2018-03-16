@@ -1,0 +1,1 @@
+* * * * * cd /home/vivo/sentinel && SENTINEL_CONFIG=/home/vivo/sentinel/sentinel.conf python /opt/wallet/vivo/sentinel/bin/sentinel.py
