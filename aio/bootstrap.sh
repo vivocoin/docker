@@ -80,7 +80,7 @@ then
 	timeout -t 5 su -l vivo -s /bin/sh -c "/opt/wallet/vivo/vivod -printtoconsole -disablewallet=1"
 	while :
 	do
-		if [ "$(ps | grep vivod)" = "" ]
+		if [ "$(ps | grep vivod | grep -v grep)" = "" ]
 		then
 			break
 		fi
