@@ -41,6 +41,7 @@ chmod 700 /home/vivo/.vivocore
 echo "disablewallet=1
 enableprivatesend=0
 enableinstantsend=0
+
 rpcuser=$USERNAME
 rpcpassword=$PASSWORD
 rpcbind=[::]
@@ -58,7 +59,7 @@ mkdir /home/vivo/sentinel/database
 echo "vivo_conf=/home/vivo/.vivocore/vivo.conf
 
 network=mainnet
-db_name=database/sentinel.db
+db_name=/home/vivo/sentinel/database/sentinel.db
 db_driver=sqlite
 " >> /home/vivo/sentinel/sentinel.conf
 chmod 600 /home/vivo/sentinel/sentinel.conf

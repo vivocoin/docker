@@ -33,7 +33,7 @@ echo "vivo_conf=/home/vivo/.vivocore/vivo.conf
 vivo_host=$VIVODHOST
 
 network=mainnet
-db_name=database/sentinel.db
+db_name=/home/vivo/sentinel/database/sentinel.db
 db_driver=sqlite
 " >> /home/vivo/sentinel/sentinel.conf
 chmod 600 /home/vivo/sentinel/sentinel.conf

@@ -6,7 +6,7 @@ function checkdat()
 	RET=0
 
 	# for every dat file
-	for file in "banlist.dat" "fee_estimates.dat" "governance.dat" "mncache.dat" "mnpayments.dat" "netfulfilled.dat" "peers.dat" "wallet.dat"
+	for file in "banlist.dat" "fee_estimates.dat" "governance.dat" "mncache.dat" "mnpayments.dat" "netfulfilled.dat" "peers.dat" "wallet.dat" "masternode.conf"
 	do
 		# if file exists in .vivocore and is not a symlink
 		if [ -f /home/vivo/.vivocore/$file ] && [ ! -h /home/vivo/.vivocore/$file ]

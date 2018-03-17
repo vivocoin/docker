@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ ! -d $HOME/.vivocore ] || [ ! -f $HOME/.vivocore/vivo.conf ]
+if [ ! -d /home/vivo/.vivocore ] || [ ! -f /home/vivo/.vivocore/vivo.conf ]
 then
 	sh /opt/wallet/vivo/bootstrap.sh
 fi
 
-exec /opt/wallet/vivo/vivod $@
+exec su -l vivo -s /bin/sh -c "exec /opt/wallet/vivo/vivod $@"

@@ -8,8 +8,13 @@ RUN apk update && \
 	wget http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz && \
 	tar xf db-4.8.30.tar.gz && \
 	cd db-4.8.30/build_unix && \
-	../dist/configure --enable-cxx --with-pic --enable-shared --disable-static --prefix=/usr && \
-	make -j 5 && \
+	../dist/configure \
+		--enable-cxx \
+		--with-pic \
+		--enable-shared \
+		--disable-static \
+		--prefix=/usr && \
+	make -j $(nproc) && \
 	make install
 # vivod
 RUN apk add \
@@ -36,7 +41,7 @@ RUN apk add \
 		--with-gui=no \
 		--with-daemon \
 		--prefix=/root/build/vivo/install && \
-	make -j 5 && \
+	make -j $(nproc) && \
 	make install && \
 	strip \
 		--strip-unneeded \
@@ -45,8 +50,13 @@ RUN apk add \
 		-R .note.gnu.gold-version \
 		/root/build/vivo/install/bin/*
 # sentinel
-RUN apk add git py2-pip && \
-	pip install inflection==0.3.1 peewee==2.8.3 python-bitcoinrpc==1.0 && \
+RUN apk add \
+		git \
+		py2-pip && \
+	pip install \
+		inflection==0.3.1 \
+		peewee==2.8.3 \
+		python-bitcoinrpc==1.0 && \
 	git clone https://github.com/vivocoin/sentinel && \
 	cd sentinel && \
 	rm -rf \
@@ -67,7 +77,12 @@ RUN apk add git py2-pip && \
 FROM alpine:latest as assemble
 # dependencies from official repo
 RUN apk update && \
-	apk --no-cache add libevent zeromq libressl py2-py py2-simplejson && \
+	apk --no-cache add \
+		libevent \
+		zeromq \
+		libressl \
+		py2-py \
+		py2-simplejson && \
 	adduser -s /bin/false -D vivo
 # dependencies from build
 COPY --from=build \

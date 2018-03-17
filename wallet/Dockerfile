@@ -8,8 +8,13 @@ RUN apk update && \
 	wget http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz && \
 	tar xf db-4.8.30.tar.gz && \
 	cd db-4.8.30/build_unix && \
-	../dist/configure --enable-cxx --with-pic --enable-shared --disable-static --prefix=/usr && \
-	make -j 5 && \
+	../dist/configure \
+		--enable-cxx \
+		--with-pic \
+		--enable-shared \
+		--disable-static \
+		--prefix=/usr && \
+	make -j $(nproc) && \
 	make install
 # VIVO wallet
 RUN apk add \
@@ -36,13 +41,21 @@ RUN apk add \
 		--with-gui=no \
 		--with-daemon \
 		--prefix=/root/build/vivo/install && \
-	make -j 5 && \
+	make -j $(nproc) && \
 	make install && \
-	strip --strip-unneeded -R .comment -R .GCC.command.line -R .note.gnu.gold-version /root/build/vivo/install/bin/*
+	strip \
+		--strip-unneeded \
+		-R .comment \
+		-R .GCC.command.line \
+		-R .note.gnu.gold-version \
+		/root/build/vivo/install/bin/*
 
 FROM alpine:latest as assemble
 RUN apk update && \
-	apk --no-cache add libevent zeromq libressl && \
+	apk --no-cache add \
+		libevent \
+		zeromq \
+		libressl && \
 	adduser -s /bin/false -D vivo
 COPY --from=build \
 	/usr/lib/libboost_system.so.1.62.0 \
