@@ -467,7 +467,8 @@ then
 
 	DAEMONNAME="vivo-mn-$DAEMONIDX"
 	echo "docker container name: $DAEMONNAME"
-	docker service create $DOCKERPARAMS --name $DAEMONNAME --hostname $DAEMONNAME -p $PUBLICATION $DAEMONIMAGE
+	VOLUME="vivo-mndata-$DAEMONIDX:/vivo"
+	docker service create $DOCKERPARAMS --name $DAEMONNAME --hostname $DAEMONNAME -v $VOLUME $PUBLICATION $DAEMONIMAGE
 else
 	# rpcuser=
 	DOCKERPARAMS="$DOCKERPARAMS -e VIVO_RPCUSER=$USERNAME"
@@ -490,6 +491,7 @@ else
 
 	DAEMONNAME="vivo-mn-$DAEMONIDX"
 	echo "docker container name: $DAEMONNAME"
-	docker create $DOCKERPARAMS --name $DAEMONNAME --hostname $DAEMONNAME $PUBLICATION $DAEMONIMAGE
+	VOLUME="vivo-mndata-$DAEMONIDX:/vivo"
+	docker create $DOCKERPARAMS --name $DAEMONNAME --hostname $DAEMONNAME -v $VOLUME $PUBLICATION $DAEMONIMAGE
 	docker start $DAEMONNAME
 fi

@@ -5,4 +5,4 @@ then
 	sh /opt/wallet/vivo/sentinel/bootstrap.sh
 fi
 
-exec crond -f
+exec crond -f -l 2
