@@ -71,7 +71,7 @@ then
 			break
 		fi
 		sleep 5
-		killall vivod
+		killall vivod &>/dev/null
 	done
 	checkdat
 fi

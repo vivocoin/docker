@@ -83,7 +83,7 @@ then
 			break
 		fi
 		sleep 1
-		killall vivod
+		killall vivod &>/dev/null
 	done
 	checkdat
 fi

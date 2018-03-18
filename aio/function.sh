@@ -45,8 +45,8 @@ function checkdat()
 
 function stopcont()
 {
-	killall vivod
-	killall crond
+	killall vivod &>/dev/null
+	killall crond &>/dev/null
 
 	while :
 	do

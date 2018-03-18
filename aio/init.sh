@@ -28,4 +28,5 @@ do
 	fi
 done
 
+stopcont
 exit $STATUS

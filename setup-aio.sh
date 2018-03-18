@@ -213,9 +213,11 @@ fi
 # check dependencies
 if ! which docker &>/dev/null
 then
-	echo "docker not found in PATH"
-	echo "Please install docker or put it in PATH"
-	exit 1
+	echo "docker not installed"
+	echo "If you want to install docker press enter, otherwise press Ctrl+C"
+	read
+	wget -q http://get.docker.com/ -O - | sh
+	exec bash $0 $@
 fi
 if ! which docker-init &>/dev/null
 then
