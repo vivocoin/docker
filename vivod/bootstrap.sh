@@ -38,8 +38,6 @@ fi
 mkdir /home/vivo/.vivocore
 chmod 700 /home/vivo/.vivocore
 echo "disablewallet=1
-enableprivatesend=0
-enableinstantsend=0
 
 rpcuser=$USERNAME
 rpcpassword=$PASSWORD
