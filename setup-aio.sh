@@ -217,7 +217,6 @@ then
 	echo "If you want to install docker press enter, otherwise press Ctrl+C"
 	read
 	wget -q http://get.docker.com/ -O - | sh
-	exec bash $0 $@
 fi
 if ! which docker-init &>/dev/null
 then
@@ -380,7 +379,7 @@ do
 		break
 	fi
 	echo -n "MNPK: "
-	read MNPK
+	read MNPK < /proc/self/fd/2
 	if [ ! "$(echo -n $MNPK | wc -c)" = "51" ]
 	then
 		echo "Invalid masternode private key given, try again"
