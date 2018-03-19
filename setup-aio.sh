@@ -215,7 +215,7 @@ if ! which docker &>/dev/null
 then
 	echo "docker not installed"
 	echo "If you want to install docker press enter, otherwise press Ctrl+C"
-	read
+	read < /proc/self/fd/2
 	wget -q http://get.docker.com/ -O - | sh
 fi
 if ! which docker-init &>/dev/null
@@ -302,7 +302,7 @@ else
 		while :
 		do
 			echo -n "External IP: "
-			read EXIP
+			read EXIP < /proc/self/fd/2
 			if ! isroutable $EXIP
 			then
 				echo "IP address \"$EXIP\" is not routeable on the Internet"
@@ -335,7 +335,7 @@ else
 				echo "$CNT) $ip"
 			done
 			echo -n "Your choice: "
-			read CHOICE
+			read CHOICE < /proc/self/fd/2
 			CNT=0
 			IPCHOICE=
 			for ip in $IFIPS

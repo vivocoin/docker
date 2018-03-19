@@ -22,14 +22,14 @@ VIVODHOST=$VIVO_HOSTNAME
 
 mkdir /home/vivo/.vivocore
 chmod 700 /home/vivo/.vivocore
-echo "rpcuser=$USERNAME
+echo -n "rpcuser=$USERNAME
 rpcpassword=$PASSWORD
 " > /home/vivo/.vivocore/vivo.conf
 chmod 600 /home/vivo/.vivocore/vivo.conf
 
 mkdir /home/vivo/sentinel
 mkdir /home/vivo/sentinel/database
-echo "vivo_conf=/home/vivo/.vivocore/vivo.conf
+echo -n "vivo_conf=/home/vivo/.vivocore/vivo.conf
 vivo_host=$VIVODHOST
 
 network=mainnet

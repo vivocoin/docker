@@ -38,9 +38,7 @@ fi
 # vivo.conf
 mkdir /home/vivo/.vivocore
 chmod 700 /home/vivo/.vivocore
-echo "disablewallet=1
-
-rpcuser=$USERNAME
+echo -n "rpcuser=$USERNAME
 rpcpassword=$PASSWORD
 rpcbind=[::]
 rpcallowip=::/0
@@ -54,7 +52,7 @@ chmod 600 /home/vivo/.vivocore/vivo.conf
 # sentinel.conf
 mkdir /home/vivo/sentinel
 mkdir /home/vivo/sentinel/database
-echo "vivo_conf=/home/vivo/.vivocore/vivo.conf
+echo -n "vivo_conf=/home/vivo/.vivocore/vivo.conf
 
 network=mainnet
 db_name=/home/vivo/sentinel/database/sentinel.db

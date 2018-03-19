@@ -9,7 +9,7 @@ fi
 
 STATUS=0
 
-su -l vivo -s /bin/sh -c "/opt/wallet/vivo/vivod -daemon -printtoconsole"
+su -l vivo -s /bin/sh -c "/opt/wallet/vivo/vivod -daemon $@"
 crond -l 2
 
 trap stopcont 15

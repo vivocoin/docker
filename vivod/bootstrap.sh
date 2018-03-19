@@ -37,9 +37,7 @@ fi
 
 mkdir /home/vivo/.vivocore
 chmod 700 /home/vivo/.vivocore
-echo "disablewallet=1
-
-rpcuser=$USERNAME
+echo -n "rpcuser=$USERNAME
 rpcpassword=$PASSWORD
 rpcbind=[::]
 rpcallowip=::/0

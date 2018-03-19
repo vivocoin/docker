@@ -121,4 +121,4 @@ RUN chown vivo:vivo -R /home/vivo
 EXPOSE 9998 12845
 VOLUME /vivo
 ENV SECRET_OVERRIDE=0 VIVO_RPCUSER=vivo VIVO_RCPPASSWORD=vivo VIVO_MNPRIVKEY=7eJ7wzphM58uhEW8Uvcii6uweKf2pgZHiuHSiX41RRR6RctTiaS VIVO_EXTERNALIP=0.0.0.0
-ENTRYPOINT [ "/opt/wallet/vivo/init.sh" ]
+ENTRYPOINT [ "/opt/wallet/vivo/init.sh", "-printtoconsole" ]
