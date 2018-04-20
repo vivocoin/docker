@@ -168,11 +168,11 @@ function checkport()
 		return 0
 	else
 		# something is litening on $IP:$PORT
-		if echo $NSOUT | grep $IP &>/dev/null
+		if echo $NSOUT | grep ${IP}:${PORT} &>/dev/null
 		then
 			return 1
 		# something is litening on 0.0.0.0:$PORT
-		elif echo $NSOUT | grep "0.0.0.0" &>/dev/null
+		elif echo $NSOUT | grep "0.0.0.0:${PORT}" &>/dev/null
 		then
 			if [ "$NOBAIL" = "" ]
 			then
