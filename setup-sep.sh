@@ -5,8 +5,8 @@ PASSWORD=$(</dev/urandom tr -dc '12345qwertQWERTasdfgASDFGzxcvbZXCVB' | head -c2
 NETWORKNAME="vivonet"
 DAEMONNAME="vivo-vivod-1"
 SENTINELNAME="vivo-sentinel-1"
-DAEMONIMAGE="hunbalazs/vivo-vivod"
-SENTINELIMAGE="hunbalazs/vivo-sentinel"
+DAEMONIMAGE="vivocoin/vivo-vivod"
+SENTINELIMAGE="vivocoin/vivo-sentinel"
 PUBLICATION="12845:12845"
 DOCKERPARAMS=
 

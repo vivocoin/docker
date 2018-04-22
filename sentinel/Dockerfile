@@ -8,7 +8,7 @@ RUN apk update && \
 		inflection==0.3.1 \
 		peewee==2.8.3 \
 		python-bitcoinrpc==1.0 && \
-	git clone https://github.com/hunbalazs/sentinel && \
+	git clone https://github.com/vivocoin/sentinel && \
 	cd sentinel && \
 	rm -rf \
 		test \

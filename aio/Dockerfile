@@ -26,7 +26,7 @@ RUN apk add \
 		libevent-dev \
 		zeromq-dev \
 		libressl-dev && \
-	git clone https://github.com/hunbalazs/vivo && \
+	git clone https://github.com/vivocoin/vivo && \
 	cd vivo && \
 	chmod +x share/genbuild.sh && \
 	sh autogen.sh && \
