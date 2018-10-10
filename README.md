@@ -21,8 +21,9 @@ https://www.youtube.com/watch?v=WH_ABrwduZo&t=290s
 4. Follow the instructions (You'll need to enter your MNPK here). By default it will create and start container named vivo-mn-1
 
 5. The Masternode Server should be up and running. Use docker commands to check status and logs
-    -  sudo docker pd -a
+    -  sudo docker ps -a
     -  sudo docker logs --tail 50 --follow --timestamps vivo-mn-1
+    - # to restart masternode sudo docker restart vivo-mn-1
 
 6. Be patient since Masternode Server started it'll take some time while (hours) you'll see it in your wallet in ENABLED status.
 
